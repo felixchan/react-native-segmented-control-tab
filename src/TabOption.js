@@ -148,6 +148,8 @@ export default class TabOption extends PureComponent<Props> {
         activeOpacity={activeTabOpacity}
       >
         <View style={{ flexDirection: 'row' }}>
+          { typeof text === 'object' && text }
+          { typeof text === 'string' && (
           <Text
             style={[
               styles.tabTextStyle,
@@ -161,7 +163,7 @@ export default class TabOption extends PureComponent<Props> {
             ellipsizeMode="tail"
           >
             {text}
-          </Text>
+          </Text>)}
           {Boolean(badge) && (
             <View
               style={[
